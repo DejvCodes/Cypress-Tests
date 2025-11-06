@@ -62,4 +62,49 @@ existují dva hlavní způsoby:
 • cy.get - výběr podle css selektorů
 • cy.contains - výběr podle textu
 • kombinace
+
+xPath 
+• zkratka pro XML Path Language – dotazovací jazyk pro výběr elementů v XML/HTML dokumentu
+• umožňuje vybírat prvky podle jejich hierarchie nebo atributů, podobně jako CSS selektory, ale s větší přesností
+
+Cypress ho standardně nepodporuje, je potřeba doinstalovat plugin:
+• npm install -D cypress-xpath
+
+a přidat do support/commands.ts:
+• import 'cypress-xpath'; // TS
+• require("cypress-xpath") // JS
+
+poté lze používat:
+• cy.xpath('//button[text()="Uložit"]') –> najde <button> s textem "Uložit"
+• cy.xpath('//div[@id="container"]/span') –> najde <span> uvnitř <div id="container">
+• výhodou je možnost přesně cílit složitější struktury
+• nevýhodou je menší čitelnost a pomalejší výkon oproti CSS selektorům
+
+pageLoadTimeout: 60000 
+• nastavení maximálního času (v milisekundách), po který Cypress čeká na kompletní načtení stránky
+• výchozí hodnota je 60000 ms (tedy 60 sekund)
+• pokud se stránka nenačte do tohoto času, test selže
+
+Cypress.config('defaultCommandTimeout', 16000)
+• nastaví výchozí maximální čas (v milisekundách), po který Cypress čeká na dokončení příkazů
+• týká se většiny příkazů jako cy.get(), cy.contains(), cy.click(), cy.type() atd.
+• pokud se prvek nebo akce neprovede do 16 sekund, test selže
+
+npm install cypress-real-events 
+• nainstaluje balíček "cypress-real-events" jako vývojovou závislost
+• pozor: správný název balíčku je "cypress-real-event" (v jednotném čísle)
+• pokud použiješ "cypress-real-events" (v množném), tento balíček buď neexistuje,
+• nebo není oficiálně podporovaný plugin pro Cypress
+
+správný postup instalace:
+• npm install -D cypress-real-event
+
+a poté do support/e2e.ts přidat:
+• import 'cypress-real-event/support'
+
+plugin umožňuje realistické interakce jako:
+• cy.realClick()      -> skutečný klik myší
+• cy.realHover()      -> skutečný hover
+• cy.realPress('Tab') -> simulace stisku klávesy
+• cy.realType('text') -> realistické psaní
 */ 
