@@ -6,7 +6,6 @@ describe('Test scénář', () => {
 
     it('title test', () => {
         cy.title().should('eq', 'Text Input');
-        //  
         cy.title().then(title => {
             expect(title).to.be.equal('Text Input'); // OK
             expect(title).to.contain('Input'); // OK
