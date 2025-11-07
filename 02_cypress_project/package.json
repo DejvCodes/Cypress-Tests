@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open --e2e --browser chrome"
+    "test": "cypress open --e2e --browser chrome --env secondVariable=My_second_variable_test"
   },
   "devDependencies": {
     "cypress": "^15.5.0",

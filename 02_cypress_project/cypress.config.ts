@@ -7,6 +7,11 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    env: {
+      firstVariable: 'First Variable - Test',
+      demoqa: "https://demoqa.com/",
+      herokuapp: "https://the-internet.herokuapp.com/",
+    }
   },
   pageLoadTimeout: 60000,
 });
