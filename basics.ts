@@ -117,4 +117,13 @@ Globální konfigurační hodnoty
 • nastavení, která ovlivňují chování všech testů v Cypressu (např. baseUrl, defaultCommandTimeout, 
   pageLoadTimeout, viewportWidth, viewportHeight, env, retries)
 • ukládají se do souboru cypress.config.ts a platí pro celý projekt
+
+
+get - najde element(y) podle selektoru (např. třídy, ID, atributy)
+contains - najde elementy podle textu, case sensitive
+find - hledá element(y) uvnitř už nalezeného elementu
+
+Contains - najde první výskyt na stránce
+        - hlídat malá a velká písmena
+        - zapnutí a vypnutí case sensitive
 */ 
