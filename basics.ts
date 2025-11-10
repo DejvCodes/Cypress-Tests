@@ -118,7 +118,6 @@ Globální konfigurační hodnoty
   pageLoadTimeout, viewportWidth, viewportHeight, env, retries)
 • ukládají se do souboru cypress.config.ts a platí pro celý projekt
 
-
 get - najde element(y) podle selektoru (např. třídy, ID, atributy)
 contains - najde elementy podle textu, case sensitive
 find - hledá element(y) uvnitř už nalezeného elementu
@@ -126,4 +125,10 @@ find - hledá element(y) uvnitř už nalezeného elementu
 Contains - najde první výskyt na stránce
         - hlídat malá a velká písmena
         - zapnutí a vypnutí case sensitive
+        
+Find - nejdříve cy.get | cy.contains
+
+Invoke 
+• zavolá metodu nebo získá vlastnost DOM prvku přímo z jQuery objektu
+• používá se např. pro čtení textu, atributů nebo volání funkcí mimo standardní Cypress příkazy
 */ 
